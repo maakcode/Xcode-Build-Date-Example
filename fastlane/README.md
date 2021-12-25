@@ -21,7 +21,7 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 [bundle exec] fastlane ios build
 ```
 
-빌드 날짜를 업데이트하고 시뮬레이터용으로 빌드함
+빌드 날짜를 업데이트
 
 ----
 

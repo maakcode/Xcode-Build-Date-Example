@@ -28,8 +28,11 @@ platform :ios do
     # 빌드 날짜를 업데이트 한다
     `/usr/libexec/PlistBuddy -c "Set :BUILD_DATE #{buildDate}" "#{PROJECT_DIR}/Info.plist"`
 
-    git_commit(path: "#{PROJECT_DIR}/Info.plist", message: "[Fastlane][ci skip] 빌드 날짜 업데이트 > #{buildDate}")
-
+    begin
+      git_commit(path: "#{PROJECT_DIR}/Info.plist", message: "[Fastlane][ci skip] 빌드 날짜 업데이트 > #{buildDate}")
+    rescue
+      puts "빌드 날짜가 동일합니다."
+    end
     # 빌드와 배포 작업
   end
 end
