@@ -30,6 +30,7 @@ platform :ios do
 
     begin
       git_commit(path: "#{PROJECT_DIR}/Info.plist", message: "[Fastlane][ci skip] 빌드 날짜 업데이트 > #{buildDate}")
+      # push_to_git_remote # 변경사항 푸시
     rescue
       puts "빌드 날짜가 동일합니다."
     end
